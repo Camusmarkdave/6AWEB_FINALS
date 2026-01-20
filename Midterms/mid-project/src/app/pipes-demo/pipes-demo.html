@@ -1,0 +1,46 @@
+<div class="pipes-container">
+
+  <section class="wood-plank">
+    <h3> Date Pipe</h3>
+    Short: {{presentDate | date:'shortDate' }} <br/>
+    Full: {{presentDate | date:'fullDate' }} <br/>
+    Custom: {{presentDate | date:'M/dd/yyyy'}} <br/>
+    Time: {{presentDate | date:'h:mm'}}
+  </section>
+
+  <section class="wood-plank">
+    <!-- done -->
+    <h3>Case Transformation</h3>
+    Upper: {{presentDate | date:'fullDate' | uppercase}} <br/>
+    Lower: {{presentDate | date:'medium' | lowercase}}
+  </section>
+
+  <section class="wood-plank">
+    <h3> Currency Pipe</h3>
+    <p>PHP Format: {{ price | currency:'PHP':'symbol' }}</p>
+  </section>
+
+  <section class="wood-plank">
+    <h3> Slice Pipe</h3>
+    <p>Selection: {{Fruits | slice:1:4}}</p>
+  </section>
+
+  <section class="wood-plank">
+    <h3> Async Pipe</h3>
+    <p>Live Clock: {{ time$ | async | date:'mediumTime' }}</p>
+  </section>
+
+  <section class="wood-plank">
+    <h3>Decimal & Percent</h3>
+    <p>Decimal: {{decimalNum1 | number:'1.1-2'}}</p>
+    <p>Progress: {{ completionRate | percent }}</p>
+  </section>
+
+  <section class="wood-plank">
+    <h3> TitleCase & JSON</h3>
+    <p>Name: {{ studentName | titlecase }}</p>
+    <pre>{{ userObject | json }}</pre>
+  </section>
+
+  <h2 class="signature">Mark Dave Camus</h2>
+</div>
