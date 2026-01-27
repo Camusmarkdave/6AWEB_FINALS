@@ -1,0 +1,28 @@
+<div class="wood-page-wrapper">
+  <div class="wood-container">
+    <h1 class="wood-title">List from Main</h1>
+
+    <table class="wood-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Website</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (user of httpusers; track user.id) {
+          <tr>
+            <td>{{ user.id }}</td>
+            <td class="bold-text">{{ user.name }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.email }}</td>
+            <td><a href="http://{{user.website}}" target="_blank">{{ user.website }}</a></td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
