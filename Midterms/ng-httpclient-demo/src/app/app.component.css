@@ -1,6 +1,6 @@
 .wood-page-wrapper {
   min-height: 100vh;
-  background-color: #2b1d12; /* Deep forest background */
+  background-color: #2b1d12;
   padding: 40px 20px;
   font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
@@ -24,8 +24,8 @@
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  background: #d7ccc8; /* Light wood grain base */
-  border: 8px solid #3e2723; /* Dark bark border */
+  background: #d7ccc8;
+  border: 8px solid #3e2723;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
@@ -47,11 +47,11 @@
 }
 
 .wood-table tr:nth-child(even) {
-  background-color: #efebe9; /* Alternating lighter plank */
+  background-color: #efebe9;
 }
 
 .wood-table tr:hover {
-  background-color: #bcaaa4; /* Hover effect */
+  background-color: #bcaaa4;
   transition: background-color 0.2s ease;
 }
 
@@ -67,3 +67,9 @@ a {
 a:hover {
   text-decoration: underline;
 }
+.completed {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+
