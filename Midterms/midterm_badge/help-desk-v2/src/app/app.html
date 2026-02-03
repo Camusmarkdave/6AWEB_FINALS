@@ -1,18 +1,16 @@
-<nav style="background: #ce1126; padding: 15px; position: sticky; top: 0; z-index: 1000; display: flex; align-items: center;">
-
-  <div style="color: white; font-weight: bold; font-size: 1.2rem; margin-right: auto;">
-    🦁 Lion City Feasts
+<nav class="navbar">
+  <div class="brand">
+    <span></span> Lion City Feasts
   </div>
 
-  <div style="display: flex; gap: 20px;">
-    <a routerLink="/home" routerLinkActive="active" style="color: white; text-decoration: none; cursor: pointer;">Home</a>
-    <a routerLink="/about" routerLinkActive="active" style="color: white; text-decoration: none; cursor: pointer;">About</a>
-    <a routerLink="/services" routerLinkActive="active" style="color: white; text-decoration: none; cursor: pointer;">Services</a>
-    <a routerLink="/contact" routerLinkActive="active" style="color: white; text-decoration: none; cursor: pointer;">Contact</a>
+  <div class="nav-links">
+    <a routerLink="/home" routerLinkActive="active-link">Home</a>
+    <a routerLink="/about" routerLinkActive="active-link">About</a>
+    <a routerLink="/services" routerLinkActive="active-link">Services</a>
+    <a routerLink="/contact" routerLinkActive="active-link">Contact</a>
   </div>
-
 </nav>
 
-<div style="padding: 20px;">
+<div style="min-height: 90vh;">
   <router-outlet></router-outlet>
 </div>
