@@ -1,0 +1,10 @@
+<div style="padding: 20px;">
+  <h1 style="color: #ce1126;">🦁 Welcome to Lion City Feasts</h1>
+  <h2>Today's Specials</h2>
+  <div *ngIf="posts$ | async as posts">
+    <div *ngFor="let post of posts | slice:0:5" style="border-bottom: 1px solid #ddd; margin-bottom: 10px;">
+      <h3>{{ post.title | uppercase }}</h3>
+      <p>{{ post.body }}</p>
+    </div>
+  </div>
+</div>
