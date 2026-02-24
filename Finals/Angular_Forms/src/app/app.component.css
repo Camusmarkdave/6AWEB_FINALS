@@ -1,0 +1,53 @@
+/* src/app/app.component.css */
+.app-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header {
+  background-color: #ffffff;
+  padding: 20px 40px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between; /* Puts title on left, nav on right */
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 24px;
+}
+
+.nav-tabs {
+  display: flex;
+  gap: 15px; /* Adds space between the links */
+}
+
+.tab-link {
+  text-decoration: none;
+  padding: 10px 20px;
+  color: #555;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  background-color: #f4f7f6;
+  border: 1px solid #e0e4e6;
+}
+
+.tab-link:hover {
+  background-color: #e9ecef;
+  color: #333;
+}
+
+/* Styles the currently active route */
+.active-tab {
+  background-color: #4A90E2;
+  color: #ffffff !important;
+  border-color: #4A90E2;
+  box-shadow: 0 4px 8px rgba(74, 144, 226, 0.3);
+}
+
+.content-area {
+  padding: 0 20px;
+}
