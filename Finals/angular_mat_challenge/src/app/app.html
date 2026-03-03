@@ -1,0 +1,7 @@
+<div style="padding: 20px; display: flex; justify-content: flex-end;">
+  <mat-slide-toggle (change)="toggleTheme()" [checked]="isDarkMode">
+    {{ isDarkMode ? 'Dark Mode' : 'Light Mode' }}
+  </mat-slide-toggle>
+</div>
+
+<app-tournament-form></app-tournament-form>

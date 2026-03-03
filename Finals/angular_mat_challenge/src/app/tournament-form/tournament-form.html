@@ -1,0 +1,65 @@
+<div class="page-layout">
+  
+  <div class="form-container">
+    <h2>🏐 Summer Volley League</h2>
+    <p class="subtitle">OFFICIAL PLAYER REGISTRATION</p>
+    <p class="dob-rule">(Players must be born in 2006 or earlier)</p>
+
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+      
+      <mat-form-field appearance="fill">
+        <mat-label>Player Full Name</mat-label>
+        <input matInput formControlName="fullName">
+        <mat-error *ngIf="registrationForm.get('fullName')?.hasError('required')">Required.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Account Password</mat-label>
+        <input matInput type="password" formControlName="password">
+        <mat-error *ngIf="registrationForm.get('password')?.hasError('required')">Required.</mat-error>
+        <mat-error *ngIf="registrationForm.get('password')?.hasError('pattern')">
+          Must start with a letter, be alphanumeric, and 8+ chars.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Date of Birth</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="birthDate" [max]="maxDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="registrationForm.get('birthDate')?.hasError('required')">Required.</mat-error>
+        <mat-error *ngIf="registrationForm.get('birthDate')?.hasError('invalidYear')">
+          Must be born in 2006 or earlier.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Court Position</mat-label>
+        <mat-select formControlName="position">
+          <mat-option value="Setter">Setter</mat-option>
+          <mat-option value="Libero">Libero</mat-option>
+          <mat-option value="Middle Blocker">Middle Blocker</mat-option>
+          <mat-option value="Outside Hitter">Outside Hitter</mat-option>
+          <mat-option value="Opposite Hitter">Opposite Hitter</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button mat-raised-button class="volley-btn" type="submit" [disabled]="registrationForm.invalid">
+        JOIN THE ROSTER
+      </button>
+    </form>
+  </div>
+
+  <div class="details-container" *ngIf="submittedData">
+    <h3>🎟️ OFFICIAL ROSTER PASS</h3>
+    <div class="details-content">
+      <div class="player-card">
+        <p><strong>Player:</strong> <span>{{ submittedData.fullName }}</span></p>
+        <p><strong>DOB:</strong> <span>{{ submittedData.birthDate | date:'longDate' }}</span></p>
+        <p><strong>Position:</strong> <span class="position-badge">{{ submittedData.position }}</span></p>
+        <p><strong>Status:</strong> <span class="status-badge">CLEARED TO PLAY</span></p>
+      </div>
+    </div>
+  </div>
+
+</div>
