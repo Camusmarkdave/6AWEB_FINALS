@@ -1,0 +1,49 @@
+.navbar {
+  background: rgba(255, 255, 255, 0.95); /* Slightly see-through white */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05); /* Subtle, expensive-looking shadow */
+  border-bottom: 1px solid #eee;
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #c0392b; /* Deep Chili Red */
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #64748b; /* Slate Gray */
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+
+.nav-links a:hover {
+  color: #c0392b; /* Red on hover */
+  background-color: #fff1f2; /* Very light pink/red tint */
+}
+
+/* The active link looks like a "pill" */
+.active-link {
+  color: #c0392b !important;
+  background-color: #fff1f2;
+}

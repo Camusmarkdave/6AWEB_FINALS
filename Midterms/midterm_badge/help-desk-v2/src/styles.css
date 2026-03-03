@@ -1,0 +1,23 @@
+/* Modern Reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f8fafc; /* Soft gray-blue background, very modern */
+  color: #334155; /* Dark Slate (easier on eyes than black) */
+  line-height: 1.6;
+}
+
+/* Global Button Style */
+button {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}

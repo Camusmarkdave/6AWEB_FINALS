@@ -1,0 +1,34 @@
+<div class="wood-container">
+  <h1>Books Application</h1>
+
+  <div class="wood-panel input-panel">
+    <input id="newBook" placeholder="title">
+    <input id="newDesc" placeholder="description">
+    <input id="newPrice" type="number" placeholder="book price">
+
+    <input id="newAuthor" placeholder="author">
+    <input id="newYear" type="number" placeholder="published year">
+
+    <button class="wood-btn" (click)="addBook()">Add book</button>
+  </div>
+
+  <div class="books-list">
+    @for (book of books; track book.id) {
+      <div class="wood-panel book-item">
+        <h3>
+          <b>* {{ book.title }}</b>
+          <b> | {{ book.desc }}</b>
+          <b> | ${{ book.price }}</b>
+          <b> | {{ book.author }}</b>
+          <b> | {{ book.publishedYear }}</b>
+
+          <button class="wood-btn delete-btn" (click)="deleteBook(book.id)">Delete book</button>
+        </h3>
+      </div>
+    } @empty {
+      <p class="empty-state">No books available</p>
+    }
+  </div>
+
+  <router-outlet />
+</div>

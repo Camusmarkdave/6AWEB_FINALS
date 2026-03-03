@@ -1,0 +1,76 @@
+<div class="layout-container">
+  <div class="card">
+    <h2>Reactive Form</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      
+      <div class="form-group">
+        <input class="input-box" placeholder="Username" formControlName="username" />
+        @if (isInvalid('username')) {
+          <small class="error">Username: 4-12 chars (letters/numbers/_)</small>
+        }
+      </div>
+
+      <div class="form-group">
+        <input class="input-box" type="email" placeholder="Email" formControlName="email" />
+        @if (isInvalid('email')) {
+          <small class="error">Enter a valid email address</small>
+        }
+      </div>
+
+      <div class="form-group">
+        <input class="input-box" type="password" placeholder="Password" formControlName="password" />
+        @if (isInvalid('password')) {
+          <small class="error">Password: 8+ chars with upper, lower, and number</small>
+        }
+      </div>
+
+      <div class="form-group">
+        <select class="input-box" formControlName="role">
+          <option value="" disabled selected>Select Role</option>
+          @for (r of roles; track r) {
+            <option [value]="r">{{ r }}</option>
+          }
+        </select>
+        @if (isInvalid('role')) {
+          <small class="error">Role is required</small>
+        }
+      </div>
+
+      <div class="form-group">
+        <div class="radio-group">
+          <span class="group-title">Gender:</span>
+          <label><input type="radio" formControlName="gender" value="Male"> Male</label>
+          <label><input type="radio" formControlName="gender" value="Female"> Female</label>
+        </div>
+        @if (isInvalid('gender')) {
+          <small class="error">Gender is required</small>
+        }
+      </div>
+
+      <div class="form-group">
+        <select class="input-box" formControlName="civilStatus">
+          <option value="" disabled selected>Civil Status</option>
+          <option value="Single">Single</option>
+          <option value="Married">Married</option>
+          <option value="Widowed">Widowed</option>
+        </select>
+        @if (isInvalid('civilStatus')) {
+          <small class="error">Civil status is required</small>
+        }
+      </div>
+
+      <div class="form-group">
+        <textarea class="input-box" placeholder="Comments (Notes)" formControlName="comments" rows="3"></textarea>
+      </div>
+
+      <button class="btn" type="submit" [disabled]="form.invalid">Submit Reactive Form</button>
+    </form>
+  </div>
+
+  @if (submittedData) {
+    <div class="card result-card">
+      <h2>Submitted Data</h2>
+      <pre>{{ submittedData | json }}</pre>
+    </div>
+  }
+</div>

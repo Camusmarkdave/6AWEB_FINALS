@@ -1,0 +1,59 @@
+<div class="layout-container">
+  <div class="card">
+    <h2>Template-Driven Form</h2>
+    <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+      
+      <div class="form-group">
+        <input class="input-box" type="text" name="username" [(ngModel)]="user.username" placeholder="Username">
+      </div>
+
+      <div class="form-group">
+        <input class="input-box" type="email" name="email" [(ngModel)]="user.email" placeholder="Email">
+      </div>
+
+      <div class="form-group">
+        <input class="input-box" type="password" name="password" [(ngModel)]="user.password" placeholder="Password">
+      </div>
+
+      <div class="form-group">
+        <select class="input-box" name="role" [(ngModel)]="user.role">
+          <option value="" disabled selected>Select Role</option>
+          @for (r of roles; track r) {
+            <option [value]="r">{{ r }}</option>
+          }
+        </select>
+      </div>
+
+      <div class="form-group">
+        <div class="radio-group">
+          <span class="group-title">Gender:</span>
+          <label><input type="radio" name="gender" [(ngModel)]="user.gender" value="Male"> Male</label>
+          <label><input type="radio" name="gender" [(ngModel)]="user.gender" value="Female"> Female</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <select class="input-box" name="civilStatus" [(ngModel)]="user.civilStatus">
+          <option value="" disabled selected>Civil Status</option>
+          <option value="Single">Single</option>
+          <option value="Married">Married</option>
+          <option value="Widowed">Widowed</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <textarea class="input-box" name="comments" [(ngModel)]="user.comments" 
+                  placeholder="Comments (Notes)" rows="3"></textarea>
+      </div>
+
+      <button class="btn" type="submit">Submit Template Form</button>
+    </form>
+  </div>
+
+  @if (submittedData) {
+    <div class="card result-card">
+      <h2>Submitted Data</h2>
+      <pre>{{ submittedData | json }}</pre>
+    </div>
+  }
+</div>
